@@ -7,10 +7,10 @@ export default function Portfolio() {
         Pular para o conteúdo
       </a>
       <header className="portfolio-nav">
-        <a href="/apresentacao" className="portfolio-brand">
+        <a href="/apresentacao/" className="portfolio-brand">
           <Crown /> Reino Financeiro
         </a>
-        <a className="secondary" href="/demo">
+        <a className="secondary" href="/demo/">
           Explorar demonstração <ArrowUpRight size={16} />
         </a>
       </header>
@@ -27,7 +27,7 @@ export default function Portfolio() {
             progresso visível.
           </p>
           <div className="heading-actions">
-            <a href="/demo" className="primary">
+            <a href="/demo/" className="primary">
               Conhecer o reino <ArrowUpRight size={18} />
             </a>
             <a href="#engenharia" className="text-button">
@@ -87,7 +87,7 @@ export default function Portfolio() {
             desativadas neste passeio. Não consulta contas reais nem conecta bancos. Cotações, Open
             Finance e IA externa são próximos passos, ainda não integrados.
           </p>
-          <a className="secondary" href="/demo">
+          <a className="secondary" href="/demo/">
             Abrir demonstração
           </a>
         </div>
