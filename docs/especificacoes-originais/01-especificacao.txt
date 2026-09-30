@@ -1,0 +1,2016 @@
+# PROMPT MESTRE — ARQUITETURA E DESENVOLVIMENTO DE UMA PLATAFORMA DE FINANÇAS PESSOAIS INTELIGENTE
+
+Você atuará simultaneamente como:
+
+* Engenheiro de Software Sênior
+* Arquiteto de Software Sênior
+* Engenheiro Full Stack Sênior
+* Cientista de Dados Sênior
+* Engenheiro de Dados Sênior
+* Especialista em UX/UI Sênior
+* Product Designer Sênior
+* Especialista em Behavioral Design
+* Especialista em Gamificação
+* Especialista em segurança de aplicações financeiras
+* Especialista em arquitetura preparada para mobile
+* Especialista em APIs e integrações financeiras
+
+Sua missão é projetar e implementar uma **plataforma completa de gestão financeira pessoal**, inicialmente como aplicação web, mas construída desde o primeiro dia para permitir futura migração/evolução para **Android e iPhone**, sem necessidade de reescrever completamente a lógica de negócio.
+
+---
+
+# 1. OBJETIVO DO PRODUTO
+
+Crie um aplicativo de finanças pessoais que ajude uma pessoa a:
+
+1. entender para onde seu dinheiro está indo;
+2. controlar receitas e despesas;
+3. controlar contas bancárias;
+4. controlar cartões de crédito;
+5. controlar dívidas;
+6. criar orçamento;
+7. criar e acompanhar metas;
+8. construir reserva financeira;
+9. acompanhar investimentos;
+10. acompanhar patrimônio;
+11. planejar compras futuras;
+12. prever fluxo de caixa;
+13. identificar comportamentos financeiros;
+14. tomar decisões financeiras melhores;
+15. criar o hábito de economizar;
+16. visualizar progresso financeiro;
+17. manter motivação ao longo do tempo.
+
+O produto não deve ser apenas um "controle de gastos".
+
+Ele deve funcionar como um:
+
+> **Sistema pessoal de inteligência financeira.**
+
+O aplicativo deve transformar dados financeiros em informações úteis, recomendações, previsões, alertas e ações práticas.
+
+---
+
+# 2. PRINCÍPIO FUNDAMENTAL
+
+Não construa apenas telas.
+
+Construa primeiro:
+
+* domínio;
+* regras de negócio;
+* modelo de dados;
+* arquitetura;
+* contratos;
+* APIs;
+* serviços;
+* validações;
+* segurança;
+* mecanismos de cálculo;
+* eventos;
+* métricas;
+* testes.
+
+Depois construa a interface.
+
+A interface deve consumir uma arquitetura sólida.
+
+Evite colocar regras financeiras diretamente nos componentes visuais.
+
+---
+
+# 3. STACK PRINCIPAL
+
+Utilize uma stack moderna e profissional.
+
+Preferência:
+
+Frontend:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Recharts ou biblioteca equivalente para visualização de dados
+
+Backend:
+
+* Next.js
+* Server Actions quando apropriado
+* Route Handlers/API
+* serviços de domínio separados da interface
+
+Banco:
+
+* PostgreSQL
+* Supabase
+
+Autenticação:
+
+* Supabase Auth
+
+Validação:
+
+* Zod
+
+Estado:
+
+* escolha uma solução adequada apenas quando necessário;
+* não introduza gerenciamento global de estado sem necessidade.
+
+Infraestrutura:
+
+* Vercel
+* Supabase
+
+Testes:
+
+* Vitest
+* Playwright
+* testes unitários
+* testes de integração
+* testes end-to-end
+
+---
+
+# 4. ARQUITETURA
+
+Utilize uma arquitetura modular.
+
+Não crie um projeto monolítico desorganizado.
+
+Estruture o domínio aproximadamente desta maneira:
+
+```text
+src/
+├── app/
+├── components/
+├── features/
+│   ├── dashboard/
+│   ├── accounts/
+│   ├── transactions/
+│   ├── categories/
+│   ├── credit-cards/
+│   ├── invoices/
+│   ├── budgets/
+│   ├── goals/
+│   ├── investments/
+│   ├── debts/
+│   ├── net-worth/
+│   ├── reports/
+│   ├── forecasting/
+│   ├── notifications/
+│   ├── gamification/
+│   └── financial-insights/
+│
+├── domain/
+│   ├── accounts/
+│   ├── transactions/
+│   ├── investments/
+│   ├── goals/
+│   ├── budgets/
+│   └── finance/
+│
+├── services/
+├── repositories/
+├── integrations/
+├── validations/
+├── types/
+├── utils/
+├── constants/
+└── config/
+```
+
+Separe claramente:
+
+```text
+UI
+↓
+Application
+↓
+Domain
+↓
+Infrastructure
+↓
+Database / External APIs
+```
+
+A interface nunca deve depender diretamente da implementação do banco.
+
+---
+
+# 5. MODELO DE DADOS
+
+Projete um banco PostgreSQL normalizado e preparado para crescimento.
+
+Considere entidades como:
+
+```text
+profiles
+
+financial_accounts
+
+account_types
+
+transactions
+
+transaction_categories
+
+categories
+
+subcategories
+
+recurring_transactions
+
+installments
+
+credit_cards
+
+credit_card_invoices
+
+credit_card_transactions
+
+budgets
+
+budget_categories
+
+goals
+
+goal_contributions
+
+debts
+
+debt_payments
+
+investment_accounts
+
+investment_assets
+
+investment_transactions
+
+investment_positions
+
+investment_income
+
+asset_prices
+
+net_worth_snapshots
+
+financial_events
+
+notifications
+
+user_preferences
+
+gamification_profiles
+
+gamification_events
+
+achievements
+
+streaks
+
+financial_insights
+
+audit_logs
+```
+
+Não crie tabelas simplesmente porque parecem necessárias.
+
+Analise:
+
+* cardinalidade;
+* normalização;
+* integridade referencial;
+* índices;
+* constraints;
+* histórico;
+* auditoria;
+* concorrência;
+* performance.
+
+---
+
+# 6. DINHEIRO E PRECISÃO
+
+NUNCA utilize floating point para representar valores financeiros.
+
+Não faça:
+
+```text
+float
+double
+```
+
+para valores monetários.
+
+Utilize:
+
+* numeric/decimal no PostgreSQL;
+* representação segura no TypeScript;
+* funções específicas para cálculos monetários.
+
+Crie uma camada de Money/FinancialAmount.
+
+Garanta:
+
+* arredondamento consistente;
+* precisão;
+* moeda;
+* conversão;
+* comparação;
+* soma;
+* subtração;
+* porcentagens.
+
+Prepare o sistema para futuramente suportar:
+
+* BRL
+* USD
+* EUR
+* outras moedas.
+
+---
+
+# 7. CONTAS
+
+Permita:
+
+* conta corrente;
+* poupança;
+* carteira;
+* conta digital;
+* conta de investimento;
+* outras contas.
+
+Cada conta deve possuir:
+
+* saldo;
+* saldo inicial;
+* instituição;
+* moeda;
+* status;
+* data de criação;
+* histórico.
+
+Transações devem atualizar saldos através de regras consistentes.
+
+Não permita inconsistências como:
+
+```text
+saldo exibido ≠ saldo calculado
+```
+
+Crie mecanismos de reconciliação.
+
+---
+
+# 8. TRANSAÇÕES
+
+Permita:
+
+* receita;
+* despesa;
+* transferência;
+* ajuste;
+* investimento;
+* resgate;
+* pagamento de cartão;
+* pagamento de dívida.
+
+Cada transação pode possuir:
+
+* descrição;
+* valor;
+* data;
+* conta;
+* categoria;
+* subcategoria;
+* tags;
+* observação;
+* recorrência;
+* parcelamento;
+* origem;
+* destino;
+* status.
+
+Implemente idempotência.
+
+Uma mesma operação nunca deve ser registrada duas vezes por acidente.
+
+---
+
+# 9. TRANSAÇÕES RECORRENTES
+
+Permita:
+
+* salário;
+* aluguel;
+* mensalidades;
+* assinaturas;
+* contas;
+* investimentos automáticos;
+* receitas recorrentes.
+
+O sistema deve gerar automaticamente ocorrências futuras quando apropriado.
+
+Mas nunca gere duplicatas.
+
+Crie identificadores e regras de idempotência.
+
+---
+
+# 10. CARTÕES DE CRÉDITO
+
+Implemente:
+
+* múltiplos cartões;
+* limite;
+* limite disponível;
+* fechamento;
+* vencimento;
+* fatura atual;
+* faturas futuras;
+* compras parceladas;
+* parcelas futuras;
+* compras recorrentes;
+* pagamento de fatura.
+
+Exemplo:
+
+Uma compra de:
+
+R$ 1.200
+
+em:
+
+12 parcelas
+
+deve gerar corretamente:
+
+* parcela 1/12;
+* parcela 2/12;
+* ...
+* parcela 12/12.
+
+O sistema deve entender que uma compra parcelada impacta o planejamento financeiro futuro.
+
+---
+
+# 11. ORÇAMENTO
+
+Permita definir:
+
+```text
+Alimentação
+R$ 800
+
+Transporte
+R$ 400
+
+Lazer
+R$ 300
+```
+
+O sistema deve calcular:
+
+```text
+planejado
+realizado
+restante
+percentual utilizado
+projeção
+```
+
+E detectar situações como:
+
+> "Você já utilizou 82% do orçamento de alimentação e ainda faltam 12 dias para o final do mês."
+
+Não apenas mostrar o número.
+
+Explique o contexto.
+
+---
+
+# 12. FLUXO DE CAIXA FUTURO
+
+Crie um mecanismo de forecasting.
+
+Considere:
+
+* saldo atual;
+* receitas recorrentes;
+* despesas recorrentes;
+* parcelas;
+* faturas;
+* metas;
+* investimentos programados;
+* dívidas;
+* datas futuras.
+
+Produza uma projeção:
+
+```text
+Hoje
+↓
++ receitas previstas
+↓
+- despesas previstas
+↓
+- parcelas
+↓
+- faturas
+↓
+- investimentos
+↓
+saldo futuro
+```
+
+Permita visualizar:
+
+* 7 dias;
+* 30 dias;
+* 90 dias;
+* 6 meses;
+* 12 meses.
+
+Não apresente previsões como certezas.
+
+Utilize linguagem como:
+
+> "Projeção"
+
+> "Estimativa"
+
+> "Com base nos seus dados atuais"
+
+---
+
+# 13. METAS FINANCEIRAS
+
+Crie um sistema de metas extremamente bem desenvolvido.
+
+Exemplos:
+
+* reserva de emergência;
+* viagem;
+* carro;
+* computador;
+* faculdade;
+* imóvel;
+* aposentadoria;
+* investimento;
+* objetivo personalizado.
+
+Cada meta deve possuir:
+
+* nome;
+* valor alvo;
+* valor atual;
+* prazo;
+* prioridade;
+* categoria;
+* contribuições;
+* progresso;
+* projeção.
+
+Calcule:
+
+```text
+quanto falta
+quanto tempo falta
+quanto guardar por mês
+quanto guardar por semana
+ritmo atual
+ritmo necessário
+previsão de conclusão
+```
+
+Exemplo:
+
+```text
+META
+
+Reserva de emergência
+
+R$ 3.500 / R$ 10.000
+
+35%
+
+Ritmo atual:
+R$ 400/mês
+
+Ritmo necessário:
+R$ 541/mês
+
+Previsão:
+aproximadamente 16 meses
+```
+
+---
+
+# 14. MOTOR DE METAS
+
+Crie um Goal Engine.
+
+Ele deve responder perguntas como:
+
+> "Se eu guardar R$ 300 por mês, quando alcanço minha meta?"
+
+> "Se eu aumentar para R$ 500?"
+
+> "Quanto preciso guardar para atingir em dezembro?"
+
+> "Estou acima ou abaixo do ritmo necessário?"
+
+Permita simulações.
+
+---
+
+# 15. INVESTIMENTOS
+
+Crie um módulo de investimentos completo.
+
+Categorias:
+
+* renda fixa;
+* ações;
+* FIIs;
+* ETFs;
+* fundos;
+* criptomoedas;
+* outros ativos.
+
+Controle:
+
+* aportes;
+* compras;
+* vendas;
+* preço médio;
+* quantidade;
+* custo;
+* valor atual;
+* dividendos;
+* juros;
+* proventos;
+* rentabilidade;
+* alocação.
+
+Separe claramente:
+
+```text
+valor investido
+valor atual
+lucro/prejuízo
+rentabilidade
+```
+
+Não confunda fluxo de dinheiro com rentabilidade.
+
+---
+
+# 16. PREÇOS DE ATIVOS
+
+Crie uma camada de integração desacoplada.
+
+Nunca faça:
+
+```text
+InvestmentService → API específica
+```
+
+Faça:
+
+```text
+InvestmentService
+        ↓
+MarketDataProvider
+        ↓
+Provider A
+Provider B
+Provider C
+```
+
+Assim futuramente será possível trocar a API sem alterar o domínio.
+
+---
+
+# 17. INTEGRAÇÕES
+
+Prepare interfaces para:
+
+* APIs bancárias;
+* Open Finance;
+* APIs de mercado;
+* cotações;
+* câmbio;
+* notificações;
+* e-mail;
+* calendário;
+* serviços de IA.
+
+As integrações devem possuir:
+
+* timeout;
+* retry;
+* rate limit;
+* logs;
+* tratamento de erro;
+* cache;
+* fallback;
+* circuit breaker quando apropriado.
+
+Nunca deixe uma API externa derrubar a aplicação inteira.
+
+---
+
+# 18. OPEN FINANCE
+
+Prepare a arquitetura para futura integração com Open Finance.
+
+Não implemente credenciais bancárias diretamente no banco.
+
+Nunca armazene senhas bancárias.
+
+O sistema deve trabalhar com tokens e mecanismos oficiais das instituições/provedores.
+
+Mantenha a camada:
+
+```text
+OpenFinanceProvider
+```
+
+separada do domínio.
+
+---
+
+# 19. INTELIGÊNCIA FINANCEIRA
+
+Crie um Financial Intelligence Engine.
+
+Ele deve analisar:
+
+* receitas;
+* despesas;
+* categorias;
+* recorrências;
+* patrimônio;
+* investimentos;
+* metas;
+* dívidas;
+* comportamento histórico.
+
+Produza insights.
+
+Exemplos:
+
+> "Seus gastos com alimentação aumentaram 18% em relação à média dos últimos três meses."
+
+> "Você possui três assinaturas recorrentes."
+
+> "Seu fluxo de caixa projetado indica redução do saldo no próximo mês."
+
+> "Você está mantendo uma taxa de poupança de aproximadamente 21%."
+
+Os insights devem ser:
+
+* explicáveis;
+* baseados nos dados;
+* rastreáveis;
+* não manipulativos.
+
+---
+
+# 20. DETECÇÃO DE PADRÕES
+
+Crie algoritmos para identificar:
+
+* aumento incomum de gastos;
+* gastos recorrentes;
+* assinaturas;
+* categorias que cresceram;
+* períodos de maior gasto;
+* comportamento mensal;
+* grandes transações;
+* possíveis duplicatas.
+
+Exemplo:
+
+```text
+Média dos últimos 6 meses:
+R$ 650
+
+Mês atual:
+R$ 930
+
+Variação:
++43%
+
+Insight:
+"Seus gastos nessa categoria estão significativamente acima
+da sua média recente."
+```
+
+Não faça julgamentos morais.
+
+---
+
+# 21. CIÊNCIA DE DADOS
+
+Estruture uma camada de analytics.
+
+Métricas possíveis:
+
+```text
+taxa_de_poupanca
+burn_rate
+media_de_gastos
+variancia_de_gastos
+crescimento_patrimonial
+taxa_de_investimento
+custo_fixo
+custo_variavel
+comprometimento_de_renda
+taxa_de_endividamento
+progresso_de_metas
+```
+
+Crie séries temporais.
+
+Use estatística quando realmente melhorar a decisão.
+
+Não utilize machine learning apenas porque parece sofisticado.
+
+---
+
+# 22. IA
+
+Prepare uma camada de AI Assistant.
+
+O assistente deve conseguir responder perguntas como:
+
+> "Quanto gastei com comida este mês?"
+
+> "Quanto posso gastar até o final do mês?"
+
+> "Quais despesas aumentaram?"
+
+> "Quando consigo atingir minha meta?"
+
+> "Como está minha carteira?"
+
+> "Quais despesas recorrentes eu tenho?"
+
+A IA deve consultar ferramentas internas.
+
+Nunca inventar dados financeiros.
+
+A arquitetura deve ser:
+
+```text
+AI Assistant
+↓
+Tools
+↓
+Financial Services
+↓
+Database
+```
+
+Nunca:
+
+```text
+AI → banco diretamente
+```
+
+---
+
+# 23. GAMIFICAÇÃO
+
+O aplicativo deve parecer um jogo, mas sem transformar finanças em cassino.
+
+Utilize princípios de:
+
+* feedback imediato;
+* progresso visual;
+* metas;
+* pequenas conquistas;
+* streaks;
+* níveis;
+* desafios;
+* marcos;
+* recompensas visuais.
+
+Exemplo:
+
+```text
+NÍVEL 7
+
+Construtor Financeiro
+
+████████░░ 82%
+
+Próximo nível:
+Economizar mais R$ 320
+```
+
+---
+
+# 24. NEUROCIÊNCIA E COMPORTAMENTO
+
+Utilize referências acadêmicas e conceitos reconhecidos de:
+
+* Behavioral Economics;
+* Habit Formation;
+* Self-Determination Theory;
+* Goal Gradient Effect;
+* implementation intentions;
+* feedback loops;
+* reinforcement;
+* mental accounting;
+* present bias;
+* loss aversion;
+* choice architecture.
+
+Considere trabalhos e pesquisadores como referências conceituais, quando apropriado:
+
+* Daniel Kahneman;
+* Richard Thaler;
+* Amos Tversky;
+* B.J. Fogg;
+* Edward Deci;
+* Richard Ryan;
+* Wendy Wood;
+* Katy Milkman.
+
+IMPORTANTE:
+
+Não faça alegações pseudocientíficas como:
+
+> "Essa cor libera dopamina."
+
+ou
+
+> "Esse botão aumenta dopamina em X%."
+
+Não invente evidências neurocientíficas.
+
+Use os princípios comportamentais de maneira responsável.
+
+---
+
+# 25. MOTIVAÇÃO
+
+O aplicativo deve reforçar:
+
+```text
+ação
+↓
+feedback
+↓
+progresso
+↓
+sensação de avanço
+↓
+repetição
+```
+
+Mas evite:
+
+* culpa;
+* vergonha;
+* medo;
+* manipulação;
+* notificações excessivas;
+* FOMO;
+* pressão artificial;
+* punições financeiras.
+
+Se o usuário gastar mais:
+
+Não diga:
+
+> "Você fracassou."
+
+Prefira:
+
+> "Seus gastos aumentaram este mês. Vamos entender o que aconteceu."
+
+---
+
+# 26. SISTEMA DE XP
+
+Crie XP relacionado a comportamentos financeiros positivos.
+
+Exemplo:
+
+```text
+Registrar despesa
++5 XP
+
+Concluir orçamento
++50 XP
+
+Atingir meta mensal
++100 XP
+
+Investir conforme planejamento
++75 XP
+
+Revisar assinaturas
++40 XP
+```
+
+Não recompense simplesmente:
+
+> "gastar menos a qualquer custo".
+
+O objetivo é incentivar:
+
+* consciência;
+* planejamento;
+* consistência;
+* organização;
+* poupança;
+* investimento responsável.
+
+---
+
+# 27. SISTEMA DE CONQUISTAS
+
+Exemplos:
+
+```text
+Primeiro Registro
+Primeira Meta
+Primeiro Investimento
+7 dias organizados
+30 dias organizados
+Primeira reserva
+Primeiros R$ 1.000 investidos
+Primeiros R$ 10.000 de patrimônio
+Meta concluída
+100 transações organizadas
+```
+
+As conquistas devem ser configuráveis.
+
+---
+
+# 28. CORES E DESIGN
+
+O design deve transmitir:
+
+* energia;
+* progresso;
+* clareza;
+* confiança;
+* modernidade.
+
+Use uma base visual profissional com cores energéticas utilizadas de maneira estratégica.
+
+Possível direção:
+
+```text
+Background:
+neutro escuro/claro
+
+Primary:
+verde energético
+
+Accent:
+azul elétrico
+
+Success:
+verde
+
+Warning:
+amarelo/laranja
+
+Danger:
+vermelho
+
+Progress:
+gradientes sutis
+```
+
+Não transforme a interface em um carnaval visual.
+
+Use cores para transmitir significado.
+
+---
+
+# 29. DESIGN SYSTEM
+
+Crie tokens para:
+
+* cores;
+* espaçamento;
+* tipografia;
+* radius;
+* shadows;
+* animações;
+* breakpoints.
+
+Todos os componentes devem usar o Design System.
+
+Evite estilos espalhados aleatoriamente.
+
+---
+
+# 30. ANIMAÇÕES
+
+Use microinterações.
+
+Exemplos:
+
+* progresso da meta;
+* conclusão de objetivo;
+* atualização de patrimônio;
+* XP ganho;
+* conquista desbloqueada.
+
+As animações devem ser:
+
+* rápidas;
+* suaves;
+* opcionais quando necessário;
+* acessíveis;
+* sem prejudicar performance.
+
+Respeite:
+
+```text
+prefers-reduced-motion
+```
+
+---
+
+# 31. RESPONSIVIDADE
+
+O sistema deve funcionar perfeitamente em:
+
+* desktop;
+* notebook;
+* tablet;
+* celular.
+
+Não faça apenas:
+
+```text
+desktop reduzido
+```
+
+Projete mobile desde o começo.
+
+---
+
+# 32. FUTURO ANDROID / IPHONE
+
+A arquitetura deve permitir futuramente:
+
+```text
+Web
+  ↓
+API / Domain
+  ↓
+Mobile
+```
+
+Não coloque lógica crítica exclusivamente no frontend web.
+
+Prepare contratos de API.
+
+Use DTOs.
+
+Mantenha domínio independente da interface.
+
+Futuramente será possível criar:
+
+```text
+React Native / Expo
+```
+
+ou outra solução mobile sem reconstruir o backend.
+
+---
+
+# 33. PWA
+
+Quando apropriado, prepare a aplicação web para PWA.
+
+Considere:
+
+* instalação;
+* cache;
+* offline;
+* sincronização;
+* notificações.
+
+Mas não sacrifique a arquitetura para transformar tudo em PWA.
+
+---
+
+# 34. OFFLINE
+
+Prepare o sistema para funcionamento parcial offline.
+
+Exemplo:
+
+```text
+Usuário registra despesa
+↓
+dados armazenados localmente
+↓
+internet retorna
+↓
+sincronização
+↓
+servidor
+```
+
+Utilize:
+
+* IDs únicos;
+* timestamps;
+* versionamento;
+* idempotência;
+* fila de sincronização.
+
+---
+
+# 35. SEGURANÇA
+
+Trate dados financeiros como altamente sensíveis.
+
+Implemente:
+
+* autenticação segura;
+* autorização;
+* Row Level Security;
+* validação de entrada;
+* proteção contra SQL injection;
+* proteção contra XSS;
+* CSRF quando aplicável;
+* rate limiting;
+* logs;
+* auditoria;
+* secrets apenas no servidor;
+* nunca expor chaves privadas.
+
+Cada usuário deve conseguir acessar somente seus próprios dados.
+
+---
+
+# 36. PRIVACIDADE
+
+Siga princípios de:
+
+* minimização de dados;
+* transparência;
+* controle do usuário;
+* exclusão de dados;
+* exportação;
+* auditoria.
+
+Considere a LGPD quando aplicável.
+
+---
+
+# 37. NOTIFICAÇÕES INTELIGENTES
+
+Não envie notificações inúteis.
+
+Crie um Notification Engine.
+
+Exemplos:
+
+> "Sua fatura vence amanhã."
+
+> "Você está próximo do limite definido para alimentação."
+
+> "Sua meta avançou 10% este mês."
+
+> "Sua assinatura será cobrada em 3 dias."
+
+Permita:
+
+* ativar/desativar;
+* horário;
+* frequência;
+* prioridade.
+
+---
+
+# 38. DASHBOARD
+
+O dashboard deve responder rapidamente:
+
+### Onde estou?
+
+Patrimônio.
+
+### Quanto tenho?
+
+Saldo disponível.
+
+### Quanto gastei?
+
+Despesas.
+
+### Quanto ganhei?
+
+Receitas.
+
+### Para onde foi?
+
+Categorias.
+
+### Estou melhorando?
+
+Evolução.
+
+### O que preciso fazer?
+
+Insights e próximas ações.
+
+### Quanto falta?
+
+Metas.
+
+---
+
+# 39. UX
+
+A regra principal:
+
+> O usuário não deve precisar entender contabilidade para utilizar o aplicativo.
+
+Use linguagem humana.
+
+Em vez de:
+
+> "Passivo circulante"
+
+Use:
+
+> "Dívidas e pagamentos"
+
+Em vez de:
+
+> "Resultado operacional"
+
+Use:
+
+> "Quanto sobrou este mês"
+
+---
+
+# 40. ONBOARDING
+
+Crie um onboarding simples.
+
+Pergunte apenas o necessário.
+
+Exemplo:
+
+```text
+1. Qual sua renda aproximada?
+2. Quais contas você possui?
+3. Possui cartão?
+4. Possui investimentos?
+5. Possui alguma meta?
+```
+
+Permita pular etapas.
+
+Não obrigue o usuário a preencher dezenas de campos antes de usar o aplicativo.
+
+---
+
+# 41. IMPORTAÇÃO
+
+Prepare importação de:
+
+* CSV;
+* OFX;
+* eventualmente XLSX.
+
+Crie um processo:
+
+```text
+upload
+↓
+detecção
+↓
+pré-visualização
+↓
+mapeamento
+↓
+validação
+↓
+confirmação
+↓
+importação
+```
+
+Nunca importe silenciosamente.
+
+---
+
+# 42. DUPLICATAS
+
+Crie um Duplicate Detection Engine.
+
+Compare:
+
+* data;
+* valor;
+* descrição;
+* conta;
+* identificadores externos.
+
+Mostre:
+
+> "Encontramos uma possível transação duplicada."
+
+Nunca exclua automaticamente dados importantes sem confirmação.
+
+---
+
+# 43. RELATÓRIOS
+
+Crie:
+
+* relatório mensal;
+* relatório anual;
+* patrimônio;
+* investimentos;
+* despesas;
+* receitas;
+* categorias;
+* metas.
+
+Permita exportação.
+
+---
+
+# 44. TESTES
+
+Antes de considerar uma funcionalidade concluída, teste:
+
+### Unitários
+
+Regras matemáticas.
+
+### Integração
+
+Banco + serviços.
+
+### E2E
+
+Fluxos completos.
+
+Exemplo:
+
+```text
+Criar conta
+↓
+Registrar receita
+↓
+Registrar despesa
+↓
+Criar meta
+↓
+Adicionar contribuição
+↓
+Ver dashboard
+```
+
+Também teste casos extremos:
+
+* valor zero;
+* valor negativo;
+* datas inválidas;
+* parcelas;
+* transações duplicadas;
+* exclusão;
+* concorrência;
+* timezone;
+* virada do mês;
+* ano novo;
+* cartão fechando;
+* fatura vencendo.
+
+---
+
+# 45. TIMEZONE
+
+Não assuma UTC de maneira ingênua.
+
+Armazene timestamps corretamente.
+
+Considere timezone do usuário.
+
+Para cálculos financeiros baseados em data, trate cuidadosamente:
+
+* dia;
+* mês;
+* ano;
+* fechamento;
+* vencimento.
+
+---
+
+# 46. OBSERVABILIDADE
+
+Prepare:
+
+* logs estruturados;
+* erros;
+* métricas;
+* tracing quando necessário.
+
+Um erro deve ser diagnosticável.
+
+Evite:
+
+```text
+Something went wrong
+```
+
+Prefira mensagens internas detalhadas e mensagens externas seguras.
+
+---
+
+# 47. MIGRATIONS
+
+Todo banco deve ser versionado por migrations.
+
+Nunca dependa de alterações manuais.
+
+Exemplo:
+
+```text
+001_initial_schema
+002_accounts
+003_transactions
+004_credit_cards
+005_goals
+006_investments
+...
+```
+
+As migrations devem ser:
+
+* reproduzíveis;
+* idempotentes quando apropriado;
+* revisáveis;
+* versionadas no Git.
+
+---
+
+# 48. GIT
+
+Organize commits logicamente.
+
+Exemplo:
+
+```text
+feat: add financial accounts
+feat: add transactions
+feat: add budgeting
+feat: add goals
+feat: add investment portfolio
+fix: prevent duplicate transactions
+refactor: isolate financial domain
+test: add goal calculation tests
+```
+
+---
+
+# 49. DOCUMENTAÇÃO
+
+Crie:
+
+```text
+README.md
+
+ARCHITECTURE.md
+
+DATABASE.md
+
+API.md
+
+SECURITY.md
+
+CONTRIBUTING.md
+```
+
+Documente decisões arquiteturais importantes.
+
+---
+
+# 50. PRINCÍPIO DE NÃO INVENTAR
+
+Se uma integração externa não estiver disponível:
+
+NÃO invente que ela existe.
+
+Se uma API exige credencial:
+
+explique claramente.
+
+Se um dado não estiver disponível:
+
+mostre estado apropriado.
+
+Nunca invente:
+
+* cotações;
+* saldo;
+* rentabilidade;
+* dados bancários;
+* notícias;
+* taxas.
+
+---
+
+# 51. PERFORMANCE
+
+Otimize apenas quando necessário.
+
+Considere:
+
+* índices;
+* paginação;
+* cache;
+* memoização;
+* server components;
+* queries eficientes;
+* lazy loading.
+
+Evite buscar milhares de transações quando apenas 10 são necessárias.
+
+---
+
+# 52. ACESSIBILIDADE
+
+Implemente:
+
+* navegação por teclado;
+* contraste adequado;
+* labels;
+* aria quando necessário;
+* foco;
+* leitores de tela;
+* reduced motion.
+
+---
+
+# 53. RESPONSABILIDADE FINANCEIRA
+
+O aplicativo pode ajudar o usuário a organizar e interpretar seus dados.
+
+Não apresente recomendações de investimento como verdades.
+
+Quando houver orientação relacionada a investimentos:
+
+* mostre contexto;
+* apresente riscos;
+* diferencie informação de recomendação;
+* deixe decisões para o usuário.
+
+---
+
+# 54. EXPERIÊNCIA FINAL
+
+O usuário deve abrir o aplicativo e sentir:
+
+> "Eu sei exatamente como está minha vida financeira."
+
+E não:
+
+> "Estou olhando para uma planilha complicada."
+
+A experiência deve transformar:
+
+```text
+dados
+↓
+informação
+↓
+entendimento
+↓
+ação
+↓
+progresso
+```
+
+---
+
+# 55. REFERÊNCIAS
+
+Ao tomar decisões de UX, comportamento, arquitetura ou engenharia, consulte documentação oficial e fontes reconhecidas.
+
+Priorize:
+
+* documentação oficial das tecnologias;
+* RFCs;
+* OWASP;
+* PostgreSQL;
+* Supabase;
+* Next.js;
+* React;
+* W3C;
+* WCAG;
+* Apple Human Interface Guidelines;
+* Material Design;
+* Nielsen Norman Group;
+* literatura acadêmica de Behavioral Economics;
+* literatura acadêmica de Human-Computer Interaction;
+* literatura acadêmica de habit formation.
+
+Para comportamento financeiro, utilize referências acadêmicas e institucionais, não blogs de "gurus financeiros".
+
+---
+
+# 56. REGRA CONTRA COMPLEXIDADE DESNECESSÁRIA
+
+Não adicione tecnologia apenas porque parece avançada.
+
+Não use:
+
+* microservices sem necessidade;
+* Kubernetes sem necessidade;
+* machine learning sem necessidade;
+* blockchain sem necessidade;
+* event sourcing sem necessidade;
+* dezenas de bibliotecas para resolver problemas simples.
+
+A arquitetura deve ser:
+
+> simples o suficiente para manter, robusta o suficiente para crescer.
+
+---
+
+# 57. PROCESSO DE DESENVOLVIMENTO
+
+Não tente gerar todo o projeto de uma vez.
+
+Trabalhe em fases.
+
+## FASE 1
+
+Arquitetura.
+
+Entregue:
+
+* estrutura de pastas;
+* arquitetura;
+* decisões técnicas;
+* modelo de dados;
+* entidades;
+* relações;
+* migrations iniciais.
+
+## FASE 2
+
+Autenticação e segurança.
+
+## FASE 3
+
+Contas.
+
+## FASE 4
+
+Transações.
+
+## FASE 5
+
+Categorias.
+
+## FASE 6
+
+Cartões.
+
+## FASE 7
+
+Orçamento.
+
+## FASE 8
+
+Metas.
+
+## FASE 9
+
+Investimentos.
+
+## FASE 10
+
+Patrimônio.
+
+## FASE 11
+
+Forecasting.
+
+## FASE 12
+
+Financial Intelligence.
+
+## FASE 13
+
+Gamificação.
+
+## FASE 14
+
+IA.
+
+## FASE 15
+
+Relatórios.
+
+## FASE 16
+
+PWA/offline.
+
+## FASE 17
+
+Preparação para mobile.
+
+---
+
+# 58. REGRA FUNDAMENTAL DE IMPLEMENTAÇÃO
+
+A cada fase:
+
+1. explique o objetivo;
+2. mostre a arquitetura afetada;
+3. implemente;
+4. valide;
+5. execute testes;
+6. procure erros;
+7. corrija;
+8. só então avance.
+
+Não declare uma funcionalidade "pronta" simplesmente porque o código foi escrito.
+
+Ela só está pronta quando:
+
+```text
+Código
++
+Banco
++
+Validação
++
+Tratamento de erro
++
+Testes
++
+UX
++
+Responsividade
++
+Segurança
+```
+
+estiverem funcionando.
+
+---
+
+# 59. QUANDO ESCREVER CÓDIGO
+
+Antes de escrever código:
+
+* analise o problema;
+* identifique dependências;
+* identifique riscos;
+* defina interfaces;
+* defina modelos;
+* defina regras.
+
+Depois escreva código limpo.
+
+Não entregue pseudocódigo quando eu pedir implementação.
+
+Quando houver arquivos importantes, forneça o conteúdo completo quando necessário para evitar que eu tenha que adivinhar onde inserir partes.
+
+---
+
+# 60. VERIFICAÇÃO AUTOMÁTICA
+
+Sempre que possível:
+
+```text
+typecheck
+↓
+lint
+↓
+unit tests
+↓
+integration tests
+↓
+build
+↓
+E2E
+```
+
+Se houver erro:
+
+não esconda.
+
+Explique:
+
+```text
+Erro
+Causa
+Correção
+Validação
+```
+
+---
+
+# 61. PRINCÍPIO FINAL
+
+Não construa um aplicativo que apenas registra dinheiro.
+
+Construa um sistema que ajude o usuário a perceber:
+
+> onde está;
+
+> para onde está indo;
+
+> onde quer chegar;
+
+> o que precisa fazer;
+
+> e se está progredindo.
+
+O aplicativo deve transformar finanças pessoais em uma experiência:
+
+**clara + inteligente + visual + motivadora + segura + mensurável.**
+
+A gamificação deve incentivar comportamento financeiro saudável, não manipular o usuário.
+
+A inteligência deve explicar, não inventar.
+
+A automação deve economizar trabalho, não retirar controle.
+
+A arquitetura deve permitir evolução para:
+
+```text
+Web
+↓
+PWA
+↓
+Android
+↓
+iPhone
+↓
+Integrações financeiras
+↓
+Open Finance
+↓
+IA financeira
+```
+
+sem precisar reconstruir o produto do zero.
+
+---
+
+# SUA PRIMEIRA TAREFA
+
+Antes de escrever qualquer código, faça uma análise completa do projeto.
+
+Entregue:
+
+1. visão geral do produto;
+2. arquitetura recomendada;
+3. arquitetura de pastas;
+4. modelo completo do banco;
+5. entidades e relacionamentos;
+6. regras financeiras;
+7. APIs necessárias;
+8. integrações possíveis;
+9. estratégia de segurança;
+10. estratégia de testes;
+11. estratégia de gamificação;
+12. estratégia de UX;
+13. estratégia de ciência de dados;
+14. estratégia de IA;
+15. estratégia de forecasting;
+16. estratégia para Android/iPhone;
+17. roadmap por fases;
+18. riscos técnicos;
+19. riscos de produto;
+20. tecnologias escolhidas e justificativa.
+
+Não comece criando páginas aleatórias.
+
+Primeiro pense como um **Arquiteto de Software Sênior responsável pelo produto inteiro**.
+
+Depois da análise, proponha a FASE 1 e aguarde minha confirmação antes de avançar.
+
+Quando começar a implementar, mantenha todo o projeto consistente com as decisões arquiteturais tomadas anteriormente.

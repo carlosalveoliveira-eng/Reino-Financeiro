@@ -1,0 +1,4 @@
+import {spawnSync} from 'node:child_process';
+import {mkdirSync} from 'node:fs';
+mkdirSync('.sites-runtime/test-build',{recursive:true});
+for(const args of [['node_modules/typescript/bin/tsc','domain/finance.ts','domain/invoices.ts','domain/journey.ts','domain/import.ts','domain/assistant.ts','--target','ES2022','--module','ES2022','--outDir','.sites-runtime/test-build','--skipLibCheck'],['tests/domain.test.mjs'],['tests/journey-import.test.mjs'],['tests/regressions.test.mjs']]){const r=spawnSync(process.execPath,args,{stdio:'inherit'});if(r.status!==0)process.exit(r.status||1);if(args[0].includes('typescript')){const {readFileSync,writeFileSync}=await import('node:fs');for(const file of ['journey','import','assistant','invoices']){const p='.sites-runtime/test-build/'+file+'.js';writeFileSync(p,readFileSync(p,'utf8').replaceAll("from './finance'","from './finance.js'"))}}}

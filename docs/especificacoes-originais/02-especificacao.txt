@@ -1,0 +1,1161 @@
+# 62. DIREÇÃO VISUAL — PIXEL ART 2D PREMIUM
+
+A identidade visual do produto deve seguir uma estética de:
+
+> **Pixel Art 2D moderna + fantasia medieval + tecnologia financeira + animações sofisticadas.**
+
+IMPORTANTE:
+
+Não quero aparência de jogo antigo de 8 ou 16 bits.
+
+Não quero:
+
+* gráficos pixelados grosseiros;
+* personagens extremamente quadrados;
+* estética de videogame antigo;
+* interfaces que pareçam um emulador retrô;
+* excesso de pixels gigantes;
+* visual infantil.
+
+Quero:
+
+> **Pixel art contemporânea, detalhada, elegante, expressiva e premium.**
+
+O pixel deve ser uma linguagem artística, não uma limitação técnica.
+
+---
+
+# 63. DIREÇÃO ARTÍSTICA
+
+Imagine uma combinação conceitual entre:
+
+* RPG medieval moderno;
+* fantasia;
+* aventura;
+* economia;
+* gerenciamento de recursos;
+* interface financeira premium;
+* pixel art contemporânea.
+
+O usuário deve sentir que está:
+
+> "Construindo seu próprio reino financeiro."
+
+Mas sem transformar o aplicativo em uma fantasia exagerada.
+
+A metáfora deve servir à compreensão financeira.
+
+---
+
+# 64. CONCEITO DO "REINO FINANCEIRO"
+
+O patrimônio do usuário pode ser representado visualmente como um pequeno reino que evolui.
+
+Exemplo:
+
+```text
+┌─────────────────────────────────────────┐
+│                                         │
+│       ✦ SEU REINO FINANCEIRO ✦         │
+│                                         │
+│              🏰                         │
+│             /  \                        │
+│            /____\                       │
+│           |      |                      │
+│           |  🪙  |                      │
+│           |______|                      │
+│                                         │
+│   🌲        🏡        🌾        🌲       │
+│                                         │
+│ Patrimônio: R$ 24.850                   │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+Conforme o usuário progride:
+
+```text
+organização
+↓
+economia
+↓
+reserva
+↓
+investimentos
+↓
+metas
+↓
+patrimônio
+```
+
+o ambiente pode evoluir visualmente.
+
+---
+
+# 65. EVOLUÇÃO VISUAL
+
+Crie estados visuais progressivos.
+
+Exemplo:
+
+### Estado 1 — Início
+
+Pequeno terreno.
+
+Poucos elementos.
+
+### Estado 2 — Organização
+
+Primeiras construções.
+
+### Estado 3 — Reserva
+
+Cofre aparece.
+
+### Estado 4 — Investimentos
+
+Mercado, torre ou biblioteca financeira.
+
+### Estado 5 — Metas
+
+Construções específicas aparecem.
+
+### Estado 6 — Patrimônio
+
+O reino se torna mais desenvolvido.
+
+IMPORTANTE:
+
+A evolução visual deve representar progresso real registrado no sistema.
+
+Não conceda progresso falso.
+
+---
+
+# 66. PERSONAGENS 2D
+
+Crie personagens 2D pixel art originais.
+
+Cada personagem deve possuir:
+
+* personalidade;
+* nome;
+* aparência;
+* animações;
+* maneira própria de falar;
+* função dentro do aplicativo.
+
+Evite personagens genéricos.
+
+Cada personagem deve parecer único.
+
+---
+
+# 67. EXEMPLOS DE PERSONAGENS
+
+Crie personagens conceituais como:
+
+### O Guardião
+
+Responsável por segurança e reserva.
+
+Personalidade:
+
+* cauteloso;
+* protetor;
+* confiável.
+
+Representa:
+
+> reserva de emergência.
+
+---
+
+### O Mercador
+
+Responsável por gastos e orçamento.
+
+Personalidade:
+
+* comunicativo;
+* observador;
+* curioso.
+
+Representa:
+
+> fluxo de dinheiro.
+
+---
+
+### A Alquimista
+
+Responsável por investimentos.
+
+Personalidade:
+
+* analítica;
+* curiosa;
+* estratégica.
+
+Representa:
+
+> crescimento do patrimônio.
+
+---
+
+### O Ferreiro
+
+Responsável por metas.
+
+Personalidade:
+
+* persistente;
+* trabalhador;
+* motivador.
+
+Representa:
+
+> construção de objetivos.
+
+---
+
+### O Escriba
+
+Responsável pelos registros.
+
+Personalidade:
+
+* organizado;
+* detalhista;
+* tranquilo.
+
+Representa:
+
+> histórico financeiro.
+
+---
+
+# 68. PERSONALIDADES
+
+Cada personagem deve ter uma identidade própria.
+
+Não transforme os personagens em assistentes genéricos que simplesmente dizem:
+
+> "Parabéns!"
+
+Eles devem reagir ao contexto.
+
+Exemplo:
+
+Se o usuário atingir uma meta:
+
+**Ferreiro:**
+
+> "A obra está avançando! Mais uma etapa concluída."
+
+Se o usuário estiver gastando muito:
+
+**Mercador:**
+
+> "Os gastos deste mês subiram bastante. Quer dar uma olhada no que mudou?"
+
+Se a reserva crescer:
+
+**Guardião:**
+
+> "O cofre está ficando mais forte."
+
+Se houver investimento:
+
+**Alquimista:**
+
+> "Novo recurso adicionado à sua estratégia."
+
+As mensagens devem ser curtas.
+
+---
+
+# 69. NÃO INFANTILIZAR
+
+Apesar da estética de jogo, o produto é financeiro.
+
+Portanto:
+
+Não utilizar:
+
+* linguagem infantil;
+* excesso de emojis;
+* frases bobas;
+* recompensas sem significado;
+* personagens excessivamente caricatos.
+
+A sensação deve ser:
+
+> RPG premium + aplicativo financeiro moderno.
+
+---
+
+# 70. ANIMAÇÕES DOS PERSONAGENS
+
+Os personagens podem possuir:
+
+* idle animation;
+* caminhada;
+* comemoração;
+* preocupação;
+* pensamento;
+* interação;
+* reação a eventos.
+
+Exemplo:
+
+```text
+Usuário registra economia
+↓
+personagem olha para o cofre
+↓
+caminha até ele
+↓
+animação de moedas
+↓
+pequena comemoração
+↓
+volta para posição
+```
+
+Não faça animações excessivamente longas.
+
+---
+
+# 71. INTERAÇÕES
+
+Personagens podem reagir a eventos reais.
+
+Exemplos:
+
+### Meta alcançada
+
+Personagem comemora.
+
+### Orçamento excedido
+
+Personagem demonstra preocupação.
+
+### Novo investimento
+
+Personagem analisa um pergaminho.
+
+### Patrimônio crescendo
+
+Ambiente evolui.
+
+### Dívida reduzida
+
+Personagem remove uma corrente de uma construção.
+
+Tudo deve estar ligado a eventos reais do sistema.
+
+---
+
+# 72. SISTEMA DE EVENTOS VISUAIS
+
+Crie uma arquitetura de eventos.
+
+Exemplo:
+
+```text id="znm7b2"
+FinancialEvent
+      ↓
+EventProcessor
+      ↓
+VisualEvent
+      ↓
+Animation
+```
+
+Exemplos:
+
+```text
+GOAL_COMPLETED
+SAVINGS_MILESTONE
+INVESTMENT_CREATED
+DEBT_REDUCED
+BUDGET_EXCEEDED
+NET_WORTH_MILESTONE
+FIRST_TRANSACTION
+MONTH_COMPLETED
+```
+
+Assim a gamificação não fica misturada com as regras financeiras.
+
+---
+
+# 73. SPRITE SYSTEM
+
+Não codifique personagens diretamente dentro das páginas.
+
+Crie uma abstração:
+
+```text id="7t4b7r"
+Character
+├── sprite
+├── animations
+├── personality
+├── dialogue
+├── state
+└── interactions
+```
+
+Permita futuramente adicionar novos personagens sem reescrever o sistema.
+
+---
+
+# 74. ANIMAÇÃO MODERNA
+
+Utilize animações suaves.
+
+Pode utilizar tecnologias como:
+
+* CSS animations;
+* Framer Motion/Motion;
+* Canvas quando necessário;
+* SVG;
+* spritesheets;
+* Web Animations API.
+
+Escolha a tecnologia de acordo com o caso.
+
+Não utilize Canvas para tudo.
+
+---
+
+# 75. PERFORMANCE
+
+Pixel art deve ser otimizada.
+
+Utilize:
+
+* spritesheets;
+* lazy loading;
+* compressão;
+* assets pequenos;
+* preload apenas quando necessário;
+* WebP/AVIF quando apropriado;
+* carregamento progressivo.
+
+O aplicativo deve continuar rápido mesmo com várias animações.
+
+---
+
+# 76. ACESSIBILIDADE DAS ANIMAÇÕES
+
+Inclua:
+
+```text
+prefers-reduced-motion
+```
+
+Se o usuário preferir reduzir animações:
+
+* reduzir;
+* simplificar;
+* ou desativar.
+
+A funcionalidade financeira nunca pode depender da animação.
+
+---
+
+# 77. SOM — OPCIONAL
+
+Prepare a arquitetura para futuramente suportar sons sutis.
+
+Exemplos:
+
+* conclusão de meta;
+* conquista;
+* confirmação;
+* evolução.
+
+Mas:
+
+* sons desligados por padrão quando apropriado;
+* controle de volume;
+* possibilidade de desativar;
+* nunca sons irritantes;
+* nunca autoplay agressivo.
+
+---
+
+# 78. RESPONSIVIDADE DA PIXEL ART
+
+Os personagens e elementos devem funcionar em:
+
+* desktop;
+* notebook;
+* tablet;
+* celular.
+
+Não simplesmente aumente sprites de maneira inadequada.
+
+Crie escalas apropriadas.
+
+---
+
+# 79. MOBILE FUTURO
+
+A linguagem visual deve funcionar tanto em:
+
+```text
+Web
+Desktop
+Mobile
+```
+
+quanto futuramente em:
+
+```text
+Android
+iPhone
+```
+
+Não crie elementos que dependam exclusivamente de hover.
+
+Toda interação importante deve possuir alternativa para:
+
+* toque;
+* teclado;
+* mouse.
+
+---
+
+# 80. SEGURANÇA PARA FUTURAS INTEGRAÇÕES BANCÁRIAS
+
+Esta parte é CRÍTICA.
+
+Mesmo que inicialmente o aplicativo não possua integração bancária, a arquitetura deve ser preparada desde o início para integração segura com:
+
+* Open Finance;
+* instituições financeiras;
+* agregadores financeiros;
+* APIs bancárias;
+* provedores de dados financeiros.
+
+---
+
+# 81. PRINCÍPIO FUNDAMENTAL DE SEGURANÇA BANCÁRIA
+
+NUNCA armazenar:
+
+* senha bancária;
+* PIN;
+* código de autenticação;
+* número de cartão completo;
+* CVV;
+* credenciais de internet banking.
+
+O aplicativo nunca deve pedir ao usuário:
+
+> "Digite sua senha do banco aqui."
+
+A autenticação bancária deve ocorrer no ambiente oficial da instituição/provedor.
+
+---
+
+# 82. ARQUITETURA DE INTEGRAÇÃO BANCÁRIA
+
+Crie uma camada:
+
+```text id="s82x3n"
+BankingIntegration
+        ↓
+Provider
+        ↓
+Bank / Open Finance
+```
+
+Nunca:
+
+```text id="6g4pqd"
+React
+ ↓
+Banco
+```
+
+O frontend nunca deve possuir credenciais sensíveis.
+
+---
+
+# 83. PROVIDER ABSTRACTION
+
+Crie interfaces como:
+
+```text id="z2w1j3"
+BankProvider
+
+connect()
+
+disconnect()
+
+getAccounts()
+
+getTransactions()
+
+getBalances()
+
+refreshConnection()
+```
+
+Cada provedor implementa sua própria integração.
+
+Assim:
+
+```text id="7g0jtb"
+BankProvider
+├── ProviderA
+├── ProviderB
+├── ProviderC
+└── FutureProvider
+```
+
+Pode-se trocar o provedor sem alterar o restante do sistema.
+
+---
+
+# 84. OAUTH / AUTORIZAÇÃO
+
+Quando uma instituição oferecer OAuth ou fluxo equivalente:
+
+```text id="c0b7j4"
+Usuário
+↓
+Aplicativo
+↓
+Provedor
+↓
+Banco
+↓
+Autorização
+↓
+Token
+↓
+Aplicativo
+```
+
+Nunca capturar credenciais bancárias diretamente.
+
+---
+
+# 85. TOKENS
+
+Tokens sensíveis:
+
+* nunca devem ficar no frontend;
+* nunca devem aparecer em logs;
+* nunca devem aparecer em URLs;
+* nunca devem ser armazenados em localStorage quando houver alternativa mais segura.
+
+Utilize armazenamento seguro no backend.
+
+Considere:
+
+* encryption at rest;
+* rotação;
+* expiração;
+* refresh tokens;
+* revogação;
+* escopo mínimo.
+
+---
+
+# 86. PRINCÍPIO DO MENOR PRIVILÉGIO
+
+Solicite somente permissões realmente necessárias.
+
+Se a aplicação precisa apenas:
+
+```text
+ler contas
+ler transações
+```
+
+não peça:
+
+```text
+movimentar dinheiro
+```
+
+sem necessidade.
+
+Separe claramente:
+
+```text
+READ
+```
+
+de:
+
+```text
+WRITE
+```
+
+---
+
+# 87. FUTURAS TRANSFERÊNCIAS BANCÁRIAS
+
+Caso no futuro o sistema permita operações financeiras:
+
+Não implementar transferência bancária diretamente apenas porque uma API permite.
+
+Criar uma camada específica:
+
+```text id="cb3k0x"
+PaymentIntent
+      ↓
+Authorization
+      ↓
+RiskValidation
+      ↓
+Confirmation
+      ↓
+Provider
+      ↓
+Bank
+```
+
+Toda operação deverá possuir:
+
+* identificador único;
+* idempotency key;
+* status;
+* auditoria;
+* timestamp;
+* confirmação;
+* mecanismo de reversão quando suportado.
+
+---
+
+# 88. TRANSAÇÕES BANCÁRIAS IMPORTADAS
+
+Transações vindas de bancos devem possuir:
+
+```text id="2g2j2r"
+external_id
+provider
+provider_account_id
+imported_at
+source
+```
+
+Nunca misture indiscriminadamente:
+
+```text
+transação manual
+```
+
+com:
+
+```text
+transação importada
+```
+
+sem registrar a origem.
+
+---
+
+# 89. SINCRONIZAÇÃO BANCÁRIA
+
+Crie:
+
+```text id="8j5zpa"
+BankSyncJob
+```
+
+Fluxo:
+
+```text
+Agendador
+↓
+Provider
+↓
+buscar alterações
+↓
+normalizar
+↓
+detectar duplicatas
+↓
+validar
+↓
+persistir
+↓
+atualizar saldo
+↓
+registrar log
+```
+
+O processo deve ser idempotente.
+
+Executar duas vezes não pode duplicar transações.
+
+---
+
+# 90. WEBHOOKS
+
+Quando o provedor suportar:
+
+```text id="x7r5ef"
+Provider
+↓
+Webhook
+↓
+Webhook Handler
+↓
+Validation
+↓
+Queue
+↓
+Processing
+```
+
+Nunca processe webhooks sem validar autenticidade.
+
+Implemente:
+
+* assinatura;
+* replay protection;
+* idempotência;
+* logs;
+* retry.
+
+---
+
+# 91. CRIPTOGRAFIA
+
+Dados bancários sensíveis devem ser tratados com criptografia apropriada.
+
+Separe:
+
+```text
+dados necessários para funcionamento
+```
+
+de:
+
+```text
+segredos
+```
+
+Utilize gerenciamento seguro de secrets.
+
+Nunca coloque:
+
+```text
+API_KEY
+CLIENT_SECRET
+BANK_TOKEN
+```
+
+no Git.
+
+---
+
+# 92. RLS
+
+No Supabase, utilize Row Level Security corretamente.
+
+Regra fundamental:
+
+```text
+Usuário A
+↓
+somente dados do Usuário A
+
+Usuário B
+↓
+somente dados do Usuário B
+```
+
+Não confie apenas na interface.
+
+A segurança deve estar no banco/backend.
+
+---
+
+# 93. AUDITORIA
+
+Crie audit logs para eventos importantes.
+
+Exemplos:
+
+```text
+BANK_CONNECTED
+BANK_DISCONNECTED
+ACCOUNT_IMPORTED
+TRANSACTION_IMPORTED
+TOKEN_REFRESHED
+USER_EXPORTED_DATA
+USER_DELETED_DATA
+```
+
+Não registre secrets.
+
+---
+
+# 94. INCIDENT RESPONSE
+
+Prepare arquitetura para detectar:
+
+* falhas de autenticação;
+* comportamento anormal;
+* sincronizações repetidas;
+* tokens expirados;
+* APIs indisponíveis;
+* tentativas suspeitas.
+
+Tenha mecanismos para:
+
+* revogar integração;
+* desconectar banco;
+* invalidar tokens;
+* interromper sincronização.
+
+---
+
+# 95. DESCONEXÃO DE BANCO
+
+O usuário deve poder dizer:
+
+> "Desconectar banco."
+
+O sistema deve:
+
+1. revogar integração quando possível;
+2. invalidar tokens;
+3. interromper sincronizações;
+4. preservar dados históricos conforme configuração;
+5. informar claramente o que foi removido e o que permanece.
+
+---
+
+# 96. EXPORTAÇÃO E EXCLUSÃO
+
+O usuário deve poder:
+
+* exportar seus dados;
+* excluir dados;
+* desconectar integrações;
+* excluir conta.
+
+Essas operações devem ser claras e auditáveis.
+
+---
+
+# 97. SEGURANÇA MOBILE FUTURA
+
+Quando Android/iPhone forem implementados:
+
+Não reutilizar simplesmente:
+
+```text
+localStorage
+```
+
+para secrets.
+
+Utilizar mecanismos seguros do sistema operacional:
+
+* Keychain no iOS;
+* Android Keystore;
+* secure storage equivalente.
+
+A autenticação mobile deve utilizar mecanismos apropriados para mobile.
+
+---
+
+# 98. BIOMETRIA
+
+No futuro, preparar suporte para:
+
+* Face ID;
+* Touch ID;
+* impressão digital;
+* biometria Android.
+
+A biometria deve proteger o acesso ao aplicativo/token local.
+
+Não armazenar dados biométricos.
+
+---
+
+# 99. DETECÇÃO DE DISPOSITIVO
+
+Prepare sessões e dispositivos.
+
+Permita futuramente:
+
+```text
+Meu computador
+Meu celular
+Meu tablet
+```
+
+com:
+
+* sessão;
+* último acesso;
+* revogação;
+* autenticação.
+
+---
+
+# 100. ZERO TRUST
+
+Assuma:
+
+> nenhum cliente é confiável por padrão.
+
+Valide:
+
+* identidade;
+* autorização;
+* sessão;
+* origem;
+* payload;
+* permissões.
+
+Não confie em valores enviados pelo frontend.
+
+---
+
+# 101. SECURITY BY DESIGN
+
+Segurança não será adicionada no final.
+
+Ela deve existir desde:
+
+```text
+Database
+↓
+API
+↓
+Domain
+↓
+Authentication
+↓
+Frontend
+↓
+Mobile
+```
+
+---
+
+# 102. EXPERIÊNCIA FINAL
+
+A combinação estética deve resultar em algo semelhante conceitualmente a:
+
+> **um RPG financeiro premium em pixel art moderna.**
+
+O usuário não deve sentir que está preenchendo uma planilha.
+
+Ele deve sentir que está:
+
+> **construindo e fortalecendo sua própria vida financeira.**
+
+Mas os dados por trás da experiência devem ser extremamente sérios.
+
+A estética pode ser divertida.
+
+A engenharia financeira deve ser rigorosa.
+
+A segurança deve ser profissional.
+
+A arquitetura deve estar preparada para crescer.
+
+---
+
+# 103. REGRA FINAL DE DESIGN
+
+Sempre que criar uma nova funcionalidade, pergunte:
+
+### Pergunta 1
+
+Isso melhora a vida financeira do usuário?
+
+### Pergunta 2
+
+Isso torna a informação mais fácil de entender?
+
+### Pergunta 3
+
+Isso incentiva um comportamento financeiro saudável?
+
+### Pergunta 4
+
+Isso pode ser usado sem criar manipulação psicológica?
+
+### Pergunta 5
+
+Isso funciona sem a animação?
+
+### Pergunta 6
+
+Isso funcionará futuramente no celular?
+
+### Pergunta 7
+
+Isso mantém os dados financeiros seguros?
+
+Se alguma resposta for "não", reavalie a solução antes de implementar.
+
+---
+
+# 104. OBJETIVO FINAL
+
+O produto deve combinar:
+
+**Finanças pessoais**
+
+*
+
+**Inteligência de dados**
+
+*
+
+**Automação**
+
+*
+
+**Gamificação responsável**
+
+*
+
+**Pixel Art 2D premium**
+
+*
+
+**Personagens com personalidade**
+
+*
+
+**UX moderna**
+
+*
+
+**Segurança financeira**
+
+*
+
+**Arquitetura escalável**
+
+*
+
+**Preparação para Android/iPhone**
+
+*
+
+**Futuras integrações bancárias**
+
+O resultado deve parecer um produto que poderia ser lançado comercialmente, mesmo sendo inicialmente desenvolvido para uso pessoal.
+
+Não construa um protótipo descartável.
+
+Construa uma fundação de produto real.

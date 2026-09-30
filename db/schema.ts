@@ -1,0 +1,7 @@
+import {sqliteTable,text,integer,index,uniqueIndex} from 'drizzle-orm/sqlite-core';
+export const records=sqliteTable('financial_records',{id:text('id').primaryKey(),userId:text('user_id').notNull(),type:text('type').notNull(),data:text('data').notNull(),createdAt:text('created_at').notNull()},t=>[index('idx_records_user_type').on(t.userId,t.type)]);
+export const operations=sqliteTable('operations',{id:text('id').primaryKey(),userId:text('user_id').notNull(),key:text('key').notNull(),digest:text('digest').notNull(),revision:integer('revision').notNull().default(0),createdAt:text('created_at').notNull()},t=>[uniqueIndex('idx_operations_user_key').on(t.userId,t.key)]);
+export const audit=sqliteTable('audit_events',{id:text('id').primaryKey(),userId:text('user_id').notNull(),event:text('event').notNull(),createdAt:text('created_at').notNull()},t=>[index('idx_audit_user').on(t.userId)]);
+
+export const versions=sqliteTable('user_versions',{userId:text('user_id').primaryKey(),revision:integer('revision').notNull().default(0)});
+export const rewards=sqliteTable('journey_rewards',{id:text('id').primaryKey(),userId:text('user_id').notNull(),eventKey:text('event_key').notNull(),code:text('code').notNull(),title:text('title').notNull(),xp:integer('xp').notNull(),date:text('date').notNull(),createdAt:text('created_at').notNull()},t=>[uniqueIndex('idx_rewards_user_event').on(t.userId,t.eventKey),index('idx_rewards_user_date').on(t.userId,t.date)]);
