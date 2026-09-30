@@ -77,7 +77,7 @@ npm run build:portfolio
 npm run check:public
 ```
 
-Distribuição em **dist-portfolio/**, sem servidor ou banco. Pronta para a raiz de um domínio estático. GitHub Pages em subdiretório precisa adaptar o caminho-base e links. **Nenhum site ou repositório foi publicado nesta entrega.** Veja [Publicação](docs/PUBLICACAO.md).
+Distribuição em **dist-portfolio/**, sem servidor ou banco. Pronta para a raiz de um domínio estático. GitHub Pages em subdiretório precisa adaptar o caminho-base e links. **O código-fonte está publicado neste repositório. A demonstração pública hospedada ainda está em preparação.** Veja [Publicação](docs/PUBLICACAO.md).
 
 ## Uso privado e limites
 
